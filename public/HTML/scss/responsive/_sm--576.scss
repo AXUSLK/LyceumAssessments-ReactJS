@@ -1,0 +1,36 @@
+@include media-breakpoint-up(sm){
+	.clientQuote{
+
+		q{
+			position: static;
+
+			&:before{
+				left: -57px;
+			}
+		}
+
+		.slick-current.slick-active &{
+
+			.profilePicWrap{
+				transform: scale(1);
+			}
+		}
+	}
+
+	.profilePicWrap{
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(0);
+		transform-origin: 50% 50% 0;
+		transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+		top: 17px;
+	}
+
+	.getStartedAside{
+
+		.bgPatterni{
+			top: -17%;
+		}
+	}
+}

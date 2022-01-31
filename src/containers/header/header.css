@@ -1,0 +1,6 @@
+.headerBGCust rect {
+  clip-path: url(#path01);
+}
+.headerBGCust span {
+  background-image: url(../../assets/images/bgShapes01.png);
+}

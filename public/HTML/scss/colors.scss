@@ -1,0 +1,27 @@
+@import "vendor/bootstrap/functions";
+@import "vendor/bootstrap/variables";
+
+@import "customVariables";
+@import "vendor/bootstrap/mixins";
+
+.btnTheme .btnText,
+#pageHeader.fixedPosition,
+.featColumn:before,
+.tryPetAside,
+.ftSocialNetworks > li > a:hover{
+	background-color: $wpThemeColor;
+}
+
+.btnTheme:before,
+.afDefList .icn,
+.afTabsList .nav-link.active,
+.clientQuote q:before,
+.tickList > li:before{
+	color: $wpThemeColor;
+}
+
+.btnTheme:before,
+.btnTheme .btnText,
+.afTabsList .nav-link.active{
+	border-color: $wpThemeColor;
+}

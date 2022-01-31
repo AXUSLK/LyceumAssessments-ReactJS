@@ -1,0 +1,38 @@
+@font-face {
+	font-family: 'icomoon';
+	src:
+		url('fonts/icomoon.ttf?h7kkm8') format('truetype'),
+		url('fonts/icomoon.woff?h7kkm8') format('woff'),
+		url('fonts/icomoon.svg?h7kkm8#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="icomoon-"], [class*=" icomoon-"] {
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icomoon-tick:before {
+	content: "\e904";
+}
+.icomoon-quote:before {
+	content: "\e903";
+}
+.icomoon-lock:before {
+	content: "\e900";
+}
+.icomoon-frame:before {
+	content: "\e901";
+}
+.icomoon-clock:before {
+	content: "\e902";
+}

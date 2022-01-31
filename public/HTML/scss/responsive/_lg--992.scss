@@ -1,0 +1,64 @@
+@include media-breakpoint-up(lg){
+	h1, .h1{
+		font-size: (50/16) + rem;
+	}
+
+	h2, .h2{
+		font-size: (40/16) + rem;
+	}
+
+	h3, .h3{
+		font-size: (30/16) + rem;
+	}
+
+	h4, .h4{
+		font-size: (30/16) + rem;
+	}
+
+	.logo{
+		max-width: 134px;
+	}
+
+	.mainNavigation{
+
+		.nav-item{
+			margin-left: 26px;
+		}
+
+		.nav-link{
+			font-size: 18px;
+		}
+	}
+
+	.hdBtn{
+		min-width: 150px;
+		font-size: 18px;
+
+		.btnText,
+		&:before{
+			padding-top: 13px;
+			padding-bottom: 13px;
+		}
+	}
+
+	.tryPetAside{
+		font-size: 25px;
+		line-height: (40/25);
+	}
+
+	.getStartedAside{
+		min-height: 506px;
+
+		.bgPattern{
+			max-width: 100px;
+		}
+
+		.bgPatterni{
+			right: 30px;
+		}
+
+		.bgPatternii{
+			left: 30px;
+		}
+	}
+}

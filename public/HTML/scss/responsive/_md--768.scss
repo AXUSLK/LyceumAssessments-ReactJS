@@ -1,0 +1,85 @@
+@include media-breakpoint-up(md){
+	h1, .h1{
+		font-size: (40/16) + rem;
+	}
+
+	h2, .h2{
+		font-size: (34/16) + rem;
+	}
+
+	#pageHeader{
+		position: fixed;
+	}
+
+	.logo{
+		max-width: 90px;
+	}
+
+	.mainNavigation{
+
+		.nav-item{
+			margin-left: 16px;
+		}
+
+		.nav-link{
+			padding: 0;
+			font-size: 15px;
+		}
+
+		.navbar-expand-md &{
+
+			.nav-link{
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+
+	.pageMainNavCollapse{
+		position: static;
+		background-color: transparent;
+		box-shadow: none;
+	}
+
+	.countColumn{
+
+		h3, .h3{
+			font-size: 50px;
+		}
+
+		h4, .h4{
+			font-size: 18px;
+		}
+	}
+
+	.afColumn{
+
+		.imgHolder{
+			max-width: none;
+		}
+	}
+
+	.clientQuote{
+		font-size: 26px;
+		line-height: (40/26);
+	}
+
+	.accOpener{
+		padding: 17px 45px 17px 25px;
+	}
+
+	.getStartedAside{
+
+		.bgPatterni{
+			top: 0;
+		}
+
+		.bgPatternii{
+			bottom: 0;
+		}
+	}
+
+	.ftLogo{
+		position: static;
+	}
+}

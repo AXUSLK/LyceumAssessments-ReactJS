@@ -1,0 +1,64 @@
+@include media-breakpoint-up(xl){
+	h1, .h1{
+		font-size: (60/16) + rem;
+
+		&.h1Medium{
+			font-size: (50/16) + rem;
+		}
+	}
+
+	h2, .h2{
+		font-size: (44/16) + rem;
+
+		&.h2Medium{
+			font-size: (40/16) + rem;
+		}
+	}
+
+	h3, .h3{
+		font-size: (40/16) + rem;
+	}
+
+	.factsCounterAside{
+
+		.bgPattern{
+
+			&:before,
+			&:after{
+				margin-right: -465px;
+			}
+		}
+	}
+
+	.fcbHolder{
+
+		&:after{
+			margin-left: -148px;
+		}
+	}
+
+	.tryPetAside{
+		font-size: 30px;
+		line-height: (50/30);
+	}
+
+	.profilePicWrap{
+		left: 27px;
+		@include size(162px);
+	}
+
+	.getStartedAside{
+
+		.bgPattern{
+			max-width: 150px;
+		}
+
+		.bgPatterni{
+			right: 100px;
+		}
+
+		.bgPatternii{
+			left: 80px;
+		}
+	}
+}

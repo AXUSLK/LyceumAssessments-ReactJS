@@ -1,0 +1,10 @@
+// export { default as Article } from './article/Article';
+export { default as Partners } from './partners/Partners';
+export { default as About } from './about/About';
+export { default as Counter } from './counter/Counter';
+export { default as Why } from './why/Why';
+export { default as Cambridge } from './cambridge/Cambridge';
+export { default as CandidateRegistration } from './candidateregistration/CandidateRegistration';
+// export { default as CTA } from './cta/CTA';
+// export { default as Feature } from './feature/Feature';
+export { default as Navbar } from './navbar/Navbar';

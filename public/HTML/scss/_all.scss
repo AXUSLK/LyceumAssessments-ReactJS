@@ -1,0 +1,1000 @@
+html{
+	background-color: $primary;
+}
+
+body{
+	-ms-overlfow-style: scrollbar;
+	min-width: 320px;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6{
+
+	a{
+		color: inherit;
+	}
+}
+
+h1, .h1{
+	line-height: (60/60);
+}
+
+h2, .h2{
+	line-height: (50/44);
+}
+
+h6, .h6{
+
+	&.h6Small{
+		font-size: 20px;
+		line-height: (26/20);
+	}
+}
+
+/*------------------------------------------------------------------
+Page Wrapper / #pageWrapper
+-------------------------------------------------------------------*/
+#pageWrapper{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+/*------------------------------------------------------------------
+Image Fit / .imgFit
+-------------------------------------------------------------------*/
+.imgFit{
+	object-fit: cover;
+}
+
+/*------------------------------------------------------------------
+Text Mdium (font size) / .textMedium
+-------------------------------------------------------------------*/
+.textMedium{
+	font-size: 20px;
+	line-height: (30/20);
+}
+
+/*------------------------------------------------------------------
+Background (size) Cover / .bgCover
+-------------------------------------------------------------------*/
+.bgCover{
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+/*------------------------------------------------------------------
+Svg Mask Background / .svgBg
+-------------------------------------------------------------------*/
+.svgBg{
+	@extend .inaccessible;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	@include size(100%);
+}
+
+/*------------------------------------------------------------------
+Pointer Events None / .inaccessible
+-------------------------------------------------------------------*/
+.inaccessible{
+	pointer-events: none;
+}
+
+/*------------------------------------------------------------------
+Font Weight Medium / .fwMedium
+-------------------------------------------------------------------*/
+.fwMedium{
+	font-weight: 500;
+}
+
+/*------------------------------------------------------------------
+Font Weight Semibold / .fwSemi
+-------------------------------------------------------------------*/
+.fwSemi{
+	font-weight: 600;
+}
+
+/*------------------------------------------------------------------
+Font Family Base / .fontBase
+-------------------------------------------------------------------*/
+.fontBase{
+	font-family: $font-family-sans-serif;
+}
+
+/*------------------------------------------------------------------
+Font Family Cabin / .fontAlter
+-------------------------------------------------------------------*/
+.fontAlter{
+	font-family: $fontCabin;
+}
+
+/*------------------------------------------------------------------
+buttons / .btn
+-------------------------------------------------------------------*/
+.btn{
+	@include pseudo(before, 0, 0, 0, 0);
+
+	&:before{
+		content: attr(data-hover);
+		transform: translateY(50%) rotateX(90deg);
+		opacity: 0;
+		border-width: 1px;
+		border-style: solid;
+		transform-origin: right center 0;
+		transform-style: preserve-3d;
+		transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+		padding: $btn-padding-y $btn-padding-x;
+	}
+
+	&:hover{
+
+		&:before{
+			transform: translateY(0px) rotateX(0deg);
+			opacity: 1;
+		}
+
+		.btnText{
+			opacity: 0;
+			transform: translateY(-50%) rotateX(90deg);
+		}
+	}
+}
+
+/*------------------------------------------------------------------
+buttons Text / .btnText
+-------------------------------------------------------------------*/
+.btnText{
+	padding: $btn-padding-y $btn-padding-x;
+	border: 1px solid transparent;
+	opacity: 1;
+	transform-origin: right center 0;
+	transform: translateY(0px) rotateX(0deg);
+	transform-style: preserve-3d;
+	transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/*------------------------------------------------------------------
+button Info / .btn-info
+-------------------------------------------------------------------*/
+.btn-info{
+	color: $blue;
+	background-color: transparent;
+	border-color: transparent;
+
+	&:hover{
+		background-color: transparent;
+		border-color: transparent;
+	}
+
+	&:before{
+		border-color: $info;
+		background-color: $info;
+	}
+
+	.btnText{
+		border-color: $info;
+		background-color: $info;
+	}
+}
+
+/*------------------------------------------------------------------
+button Theme / .btnTheme
+-------------------------------------------------------------------*/
+.btnTheme{
+
+	&:before{
+		background-color: $white;
+	}
+
+	.btnText{
+		color: $white;
+	}
+}
+
+/*------------------------------------------------------------------
+button White / .btnWhite
+-------------------------------------------------------------------*/
+.btnWhite{
+
+	&:before{
+		color: $white;
+		background-color: $primary;
+		border-color: $primary;
+	}
+
+	.btnText{
+		color: $primary;
+		background-color: $white;
+		border-color: $white;
+	}
+}
+
+/*------------------------------------------------------------------
+button Primary / .btn-primary
+-------------------------------------------------------------------*/
+.btn-primary{
+
+	&:before{
+		background-color: $white;
+		border-color: $primary;
+		color: $primary;
+	}
+
+	.btnText{
+		background-color: $primary;
+		border-color: $primary;
+	}
+}
+
+/*------------------------------------------------------------------
+Anchor default Tranisition / .aTransit
+-------------------------------------------------------------------*/
+.aTransit{
+	transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.btnMin{
+	min-width: 174px;
+}
+
+.btnMinMedium{
+	min-width: 204px;
+}
+
+/*------------------------------------------------------------------
+Page Main Header / #pageHeader
+-------------------------------------------------------------------*/
+#pageHeader{
+	left: 0;
+	top: 0;
+	z-index: 999;
+	transition: background-color 0.3s ease;
+	position: absolute;
+
+	&.fixedPosition{
+
+		.hdHolder{
+			padding-top: 10px !important;
+			padding-bottom: 10px !important;
+		}
+	}
+}
+
+.hdHolder{
+	transition: padding 0.3s ease;
+}
+
+/*------------------------------------------------------------------
+Page Main Header Logo / .logo
+-------------------------------------------------------------------*/
+.logo{
+	max-width: 76px;
+}
+
+/*------------------------------------------------------------------
+Page Main Header Navigation / .mainNavigation
+-------------------------------------------------------------------*/
+.mainNavigation{
+
+	.nav-link{
+		@extend .aTransit;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+/*------------------------------------------------------------------
+Page Main Header Button / .hdBtn
+-------------------------------------------------------------------*/
+.hdBtn{
+	min-width: 120px;
+	font-size: 16px;
+
+	.btnText,
+	&:before{
+		padding: 9px 10px;
+	}
+}
+
+/*------------------------------------------------------------------
+Page Main Header Navigation Collapse / .pageMainNavCollapse
+-------------------------------------------------------------------*/
+.pageMainNavCollapse{
+	position: absolute;
+	left: 0;
+	top: 100%;
+	right: 0;
+	background-color: $primary;
+	box-shadow: $box-shadow;
+}
+
+/*------------------------------------------------------------------
+Page Main Header Navigation Opener / .pageNavOpener
+-------------------------------------------------------------------*/
+.pageNavOpener{
+	transition: transform 0.3s ease, border-color 0.3s ease;
+
+	&[aria-expanded="true"]{
+		transform: rotate(-90deg);
+		border-left-color: transparent;
+	}
+
+	&:focus{
+		outline: 0;
+	}
+}
+
+/*------------------------------------------------------------------
+Intro Banner Block / .introBlock
+-------------------------------------------------------------------*/
+.introBlock{
+	font-size: 20px;
+	line-height: (26/20);
+	min-height: calc(100vh - 73px);
+
+	.svgBg{
+		z-index: 1;
+		transform: scale(0);
+		transform-origin: 100% 100% 0;
+		animation-name: appearInit;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+		animation-timing-function: ease;
+	}
+
+	.imageWrap,
+	.captionWrap{
+		z-index: 3;
+	}
+}
+
+/*------------------------------------------------------------------
+Intro Banner Pattern Background / .ibBgPattern
+-------------------------------------------------------------------*/
+.ibBgPattern{
+	@extend .inaccessible;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	background-position: 50% 0%;
+	background-attachment: fixed;
+	opacity: 0;
+	animation-name: appearFadeInit;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+/*------------------------------------------------------------------
+Sponsors Aside Block / .sponsorsAside
+-------------------------------------------------------------------*/
+.sponsorsAside{
+	z-index: 2;
+
+	.logoWrap{
+		opacity: 0.5;
+		transition: $transition-fade;
+
+		&:hover{
+			opacity: 1;
+		}
+	}
+}
+
+/*------------------------------------------------------------------
+Feature Column / .featColumn
+-------------------------------------------------------------------*/
+.featColumn{
+	transition: transform 0.5s ease, color 0.5s ease, background-color 0.5s ease;
+	background-color: $white;
+	@include pseudo(before, 0, 0, 0, 0);
+
+	&:before{
+		@extend .inaccessible;
+		opacity: 0;
+		border-radius: 999px 0 0 0;
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(0);
+		transform-origin: 100% 100% 0;
+		transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease, border-radius 0.5s ease;
+	}
+
+	&:hover{
+		transform: translateY(-10px);
+		background-color: transparent;
+
+		&:before{
+			opacity: 0.05;
+			visibility: visible;
+			border-radius: 0;
+			transform: scale(1);
+		}
+
+		.icnWrap{
+
+			> span{
+				animation-name: bumperJumper;
+			}
+		}
+	}
+
+	.icnWrap{
+		@include size(70px);
+
+		> span{
+			animation-timing-function: ease;
+			animation-duration: 0.1s;
+			animation-fill-mode: both;
+		}
+	}
+}
+
+[data-theme="pink"]{
+	background-color: lighten($pink, 35%);
+}
+
+[data-theme="info"]{
+	background-color: lighten($info, 25%);
+}
+
+[data-theme="yellow"]{
+	background-color: lighten($yellow, 29%);
+}
+
+[data-theme="purple"]{
+	background-color: lighten($purple, 42%);
+}
+
+/*------------------------------------------------------------------
+Counter Column / .countColumn
+-------------------------------------------------------------------*/
+.countColumn{
+	max-width: 185px;
+
+	h3, .h3{
+		font-size: 35px;
+	}
+
+	h4, .h4{
+		font-size: 15px;
+		line-height: (24/18);
+	}
+}
+
+/*------------------------------------------------------------------
+Facts Counter Column / .factsCounterAside
+-------------------------------------------------------------------*/
+.factsCounterAside{
+	z-index: 1;
+	@include pseudo(before, 50%, 0, 0, 0);
+
+	&:before{
+		@extend .inaccessible;
+		background-color: $light;
+		z-index: -1;
+		margin-top: -66px;
+	}
+
+	.bgPattern{
+		left: 0;
+		top: 0;
+		z-index: 1;
+		@include pseudo(before, null, 100%, 100%, null);
+		@include pseudo(after, null, 100%, 100%, null);
+
+		&:before,
+		&:after{
+			opacity: 0.15;
+			border-radius: 100%;
+			border: 1px solid $border-color;
+			margin-right: -265px;
+			@include size(581px);
+		}
+
+		&:before{
+			margin-bottom: -157px;
+		}
+
+		&:after{
+			margin-bottom: -177px;
+		}
+	}
+}
+
+.fcbHolder{
+	@include pseudo(after, 100%, null, null, 100%);
+
+	&:after{
+		border-radius: 100%;
+		opacity: 0.15;
+		border: 1px solid $border-color;
+		margin-left: -88px;
+		margin-top: -390px;
+		@include size(582px);
+	}
+}
+
+/*------------------------------------------------------------------
+Feature Items List / .flItemsList
+-------------------------------------------------------------------*/
+.flItemsList{
+
+	> li{
+		overflow: hidden;
+		margin-bottom: 15px;
+	}
+
+	.icnWrap{
+		float: left;
+		min-width: 40px;
+	}
+
+	.descrWrap{
+		overflow: hidden;
+	}
+}
+
+/*------------------------------------------------------------------
+All Feature Column / .afColumn
+-------------------------------------------------------------------*/
+.afColumn{
+
+	&:nth-child(even){
+
+		> .row{
+			flex-direction: row-reverse;
+		}
+	}
+
+	.titleWrap{
+		font-size: 20px;
+		line-height: (26/20);
+	}
+
+	h2, .h2{
+		line-height: (46/40);
+	}
+
+	.imgHolder{
+		z-index: 1;
+		max-width: 290px;
+	}
+
+	.bgPattern{
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		z-index: -1;
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		@include size(100%);
+	}
+}
+
+/*------------------------------------------------------------------
+All Feature Definition List / .afDefList
+-------------------------------------------------------------------*/
+.afDefList{
+	font-size: 18px;
+	line-height: (26/18);
+
+	dt{
+		float: left;
+		margin: 0 15px 0 0;
+		font-size: 1.2em;
+	}
+
+	dd{
+		overflow: hidden;
+		margin: 0 0 14px;
+	}
+}
+
+/*------------------------------------------------------------------
+All Feature Tabset List / .afTabsList
+-------------------------------------------------------------------*/
+.afTabsList{
+
+	.nav-item{
+		margin-right: 27px;
+	}
+
+	.nav-link{
+		padding: 0 0 3px;
+		border-width: 0 0 1px;
+		border-color: transparent;
+		color: $gray-600;
+		font-size: 20px;
+		line-height: (26/20);
+		transition: color 0.3s ease, border-color 0.3s ease;
+	}
+}
+
+.tryPetAside{
+	font-size: 20px;
+	line-height: (26/20);
+}
+
+/*------------------------------------------------------------------
+Client Testimonial Quote / .clientQuote
+-------------------------------------------------------------------*/
+.clientQuote{
+	font-size: 20px;
+	line-height: (30/20);
+
+	q{
+		quotes: none;
+		position: relative;
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(0);
+		transform-origin: 50% 50% 0;
+		transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+		@include pseudo(before, 0, null, null, 0)
+
+		&:before{
+			content: "\e903";
+			font-size: 46px;
+
+			font-family: 'icomoon' !important;
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+	}
+
+	.eWrap{
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(0);
+		transform-origin: 50% 50% 0;
+		transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+	}
+
+	cite{
+		font-style: normal;
+		font-size: 20px;
+		line-height: (24/20);
+	}
+
+	.subtitle{
+		font-size: 16px;
+		line-height: (18/16);
+		color: $gray-600;
+	}
+
+	.slick-current.slick-active &{
+
+		q,
+		.profilePicWrap,
+		.eWrap{
+			opacity: 1;
+			visibility: visible;
+			transform: scale(1);
+		}
+
+		.profilePicWrap{
+			transform: scale(1) translateX(-50%);
+		}
+	}
+}
+
+/*------------------------------------------------------------------
+Client Testimonial Quote Profile Pic / .profilePicWrap
+-------------------------------------------------------------------*/
+.profilePicWrap{
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%) scale(0);
+	@include size(122px);
+}
+
+/*------------------------------------------------------------------
+Slick Slider Dots List / .dotsList
+-------------------------------------------------------------------*/
+.dotsList{
+
+	li{
+		margin-left: 8px;
+		margin-right: 8px;
+
+		&.slick-active{
+
+			button{
+				background-color: $primary;
+			}
+		}
+	}
+
+	button{
+		text-indent: -999px;
+		overflow: hidden;
+		position: relative;
+		border-radius: 100%;
+		border: 0;
+		padding: 0;
+		background-color: $gray-400;
+		transition: background-color 0.3s ease;
+		@include size(8px);
+
+		&:hover{
+			background-color: $primary;
+		}
+	}
+}
+
+/*------------------------------------------------------------------
+Plan Column / .planColumn
+-------------------------------------------------------------------*/
+.planColumn{
+	transition: transform 0.3s ease;
+
+	&:hover{
+		transform: scale(1.03);
+	}
+
+	&[data-pack]{
+		@include pseudo(after, 0, 0, null, null);
+
+		&:after{
+			@extend .fontAlter;
+			color: $indigo;
+			content: attr(data-pack);
+			border-radius: 99px;
+			background-color: lighten($indigo, 36%);
+			font-size: 16px;
+			line-height: 1;
+			padding: 6px 20px;
+			top: 30px;
+			right: 30px;
+		}
+	}
+
+	.textEm{
+		font-style: normal;
+		font-size: 16px;
+		line-height: (20/16);
+	}
+
+	.btn{
+
+		.btnText,
+		&:before{
+			padding-top: 12px;
+			padding-bottom: 12px;
+		}
+	}
+}
+
+/*------------------------------------------------------------------
+Plan Column Feature List / .tickList
+-------------------------------------------------------------------*/
+.tickList{
+	font-size: 16px;
+	line-height: (24/16);
+
+	> li{
+		position: relative;
+		padding-left: 30px;
+		margin-bottom: 11px;
+		@include pseudo(before, 0, null, null, 0)
+
+		&:before{
+			content: "\e904";
+			font-size: 1.4em;
+
+			font-family: 'icomoon' !important;
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+	}
+}
+
+/*------------------------------------------------------------------
+FAQ Items List / .faqItem
+-------------------------------------------------------------------*/
+.faqItem{
+	border: 1px solid $border-color;
+}
+
+.accOpener{
+	cursor: pointer;
+	border-bottom: 1px solid transparent;
+	transition: border-color 0.3s ease;
+	font-size: 18px;
+	line-height: (26/18);
+	padding: 7px 45px 7px 15px;
+	@include pseudo(after, 50%, 0, null, null);
+
+	&:after{
+		border: solid currentColor;
+		border-width: 2px 2px 0 0;
+		transform: rotate(135deg);
+		margin-top: -6px;
+		right: 25px;
+		@include size(8px);
+	}
+
+	&[aria-expanded="true"]{
+		border-bottom-color: $border-color;
+	}
+
+	h3, .h3{
+		font: inherit;
+	}
+}
+
+/*------------------------------------------------------------------
+Get Started Aside Block / .getStartedAside
+-------------------------------------------------------------------*/
+.getStartedAside{
+	min-height: 386px;
+
+	h1, .h1{
+		line-height: (60/50);
+	}
+
+	.bgPattern{
+		z-index: 1;
+		max-width: 70px;
+	}
+
+	.bgPatterni{
+		top: -25%;
+		right: 15px;
+	}
+
+	.bgPatternii{
+		bottom: -17%;
+		left: 15px;
+	}
+}
+
+.gsaHolder{
+	min-height: inherit;
+}
+
+/*------------------------------------------------------------------
+Footer Area Block / .ftAreaWrap
+-------------------------------------------------------------------*/
+.ftAreaWrap{
+	font-size: 17px;
+	line-height: (26/17);
+}
+
+.ftAddress{
+	font-size: 16px;
+	line-height: (24/16);
+}
+
+/*------------------------------------------------------------------
+Footer Area Social Networks / .ftSocialNetworks
+-------------------------------------------------------------------*/
+.ftSocialNetworks{
+
+	> li{
+		margin-left: 5px;
+		margin-right: 5px;
+
+		> a{
+			@extend .aTransit;
+			overflow: hidden;
+			border-radius: 100%;
+			background-color: $white;
+			font-size: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $primary;
+			@include size(36px);
+
+			&:hover{
+				color: $white;
+
+				i{
+					animation-name: bumperJumper;
+				}
+			}
+		}
+	}
+
+	i{
+		animation-timing-function: ease;
+		animation-duration: 0.1s;
+		animation-fill-mode: both;
+	}
+}
+
+/*------------------------------------------------------------------
+Footer Area Links List / .ftLinksList
+-------------------------------------------------------------------*/
+.ftLinksList{
+
+	li{
+		margin-bottom: 9px;
+
+		&.active{
+
+			> a{
+				color: $white;
+			}
+		}
+	}
+
+	a{
+		@extend .aTransit;
+		color: inherit;
+
+		&:hover{
+			color: $white;
+		}
+	}
+}
+
+/*------------------------------------------------------------------
+Page Main Footer / .pageFooter
+-------------------------------------------------------------------*/
+#pageFooter{
+
+	p{
+
+		a{
+			@extend .aTransit;
+			color: inherit;
+
+			&:hover{
+				color: $white;
+			}
+		}
+	}
+}
+
+.pfHolder{
+	border-top: 1px solid rgba($white, 0.1);
+}
+
+/*------------------------------------------------------------------
+Page Main Footer Subscribe Form / .ftScribeForm
+-------------------------------------------------------------------*/
+.ftScribeForm{
+
+	.btn{
+		width: 116px;
+		font-size: 16px;
+
+		.btnText,
+		&:before{
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+}
+
+/*------------------------------------------------------------------
+Page Main Footer Logo / .ftLogo
+-------------------------------------------------------------------*/
+.ftLogo{
+	max-width: 134px;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	right: 0;
+}

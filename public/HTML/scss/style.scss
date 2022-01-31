@@ -1,0 +1,81 @@
+/*
+	Theme Name: Asaas - Saas software and marketing landing page
+	Author: Markhorthemes
+	Author URI: https://themeforest.net/user/markhorthemes
+	Version: 1
+	Description: Base theme for HTML5
+	Text Domain: base
+	Tags: one-column, two-columns, three-columns
+	Theme URI: http://www.htmlbeans.com/html/asaas/
+*/
+
+/*------------------------------------------------------------------
+Icomoon / .icomoon
+Slick Slider / .slick-slider
+Page Wrapper / #pageWrapper
+Image Fit / .imgFit
+Text Mdium (font size) / .textMedium
+Background (size) Cover / .bgCover
+Svg Mask Background / .svgBg
+Pointer Events None / .inaccessible
+Font Weight Medium / .fwMedium
+Font Weight Semibold / .fwSemi
+Font Family Base / .fontBase
+Font Family Cabin / .fontAlter
+buttons / .btn
+buttons Text / .btnText
+button Info / .btn-info
+button Theme / .btnTheme
+button White / .btnWhite
+button Primary / .btn-primary
+Anchor default Tranisition / .aTransit
+Page Main Header / #pageHeader
+Page Main Header Logo / .logo
+Page Main Header Navigation / .mainNavigation
+Page Main Header Button / .hdBtn
+Page Main Header Navigation Collapse / .pageMainNavCollapse
+Page Main Header Navigation Opener / .pageNavOpener
+Intro Banner Block / .introBlock
+Intro Banner Pattern Background / .ibBgPattern
+Sponsors Aside Block / .sponsorsAside
+Feature Column / .featColumn
+Counter Column / .countColumn
+Facts Counter Column / .factsCounterAside
+Feature Items List / .flItemsList
+All Feature Column / .afColumn
+All Feature Definition List / .afDefList
+All Feature Tabset List / .afTabsList
+Client Testimonial Quote / .clientQuote
+Client Testimonial Quote Profile Pic / .profilePicWrap
+Slick Slider Dots List / .dotsList
+Plan Column / .planColumn
+Plan Column Feature List / .tickList
+FAQ Items List / .faqItem
+Get Started Aside Block / .getStartedAside
+Footer Area Block / .ftAreaWrap
+Footer Area Social Networks / .ftSocialNetworks
+Footer Area Links List / .ftLinksList
+Page Main Footer / .pageFooter
+Page Main Footer Subscribe Form / .ftScribeForm
+Page Main Footer Logo / .ftLogo
+*/
+
+@import "vendor/bootstrap/functions";
+@import "vendor/bootstrap/variables";
+
+@import "customVariables";
+@import "vendor/bootstrap/mixins";
+@import "base/customMixins";
+
+@import "vendor/icomoon";
+
+@import 'base/wp-reset';
+@import "vendor/slickSlider";
+
+@import "all";
+
+/*------------------------------------------------------------------
+Animations
+-------------------------------------------------------------------*/
+@import 'animations';
+@import 'vendor/animate';
